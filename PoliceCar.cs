@@ -1,25 +1,26 @@
 ﻿using System.Diagnostics.Metrics;
 
-public class PoliceCar : Vehicle
+public class PoliceCar : VehicleWithPlate
 {
     //constant string as TypeOfVehicle wont change allong PoliceCar instances
     private const string typeOfVehicle = "Police Car";
     private bool isPatrolling;
     private bool isPersecuting;
-    private SpeedRadar speedRadar;
+    private SpeedRadar? speedRadar;
     private PoliceStation station;
 
-    public PoliceCar(string plate, PoliceStation station) : base(typeOfVehicle, plate)
+    public PoliceCar(string plate, PoliceStation station, SpeedRadar? speedRadar = null) : base(typeOfVehicle, plate)
     {
         isPatrolling = false;
         isPersecuting = false;
-        speedRadar = new SpeedRadar();
+        this.speedRadar = speedRadar;
         this.station = station;
+        
     }
 
-    public void UseRadar(Vehicle vehicle)
+    public void UseRadar(VehicleWithPlate vehicle)
     {
-        if (isPatrolling)
+        if (isPatrolling && speedRadar != null)
         {
             speedRadar.TriggerRadar(vehicle);
             bool speeding = speedRadar.GetLastReading();
@@ -77,15 +78,23 @@ public class PoliceCar : Vehicle
 
     public void PrintRadarHistory()
     {
-        Console.WriteLine(WriteMessage("Report radar speed history:"));
-        foreach (float speed in speedRadar.SpeedHistory)
+        if (speedRadar != null)
         {
-            Console.WriteLine(speed);
+            Console.WriteLine(WriteMessage("Report radar speed history:"));
+            foreach (float speed in speedRadar.SpeedHistory)
+            {
+                Console.WriteLine(speed);
+            }
+        }
+        else
+        {
+            Console.WriteLine(WriteMessage("doesn´t have a speed radar"));
         }
     }
 
-    public void PersecuteCar(string infractorsPlate)
+    public void PersecuteVehicle(string infractorsPlate)
     {
         SetPersecuting(true);
+        Console.WriteLine(WriteMessage($"is persecuting vehicle with plate {infractorsPlate}"));
     }
 }

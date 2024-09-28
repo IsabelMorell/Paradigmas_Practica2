@@ -1,4 +1,4 @@
-﻿class SpeedRadar : IMessageWritter
+﻿public class SpeedRadar : IMessageWritter
 {
     //Radar doesn't know about Vechicles, just speed and plates
     private string plate;
@@ -18,7 +18,7 @@
         return legalSpeed;
     }
 
-    public void TriggerRadar(Vehicle vehicle)
+    public void TriggerRadar(VehicleWithPlate vehicle)
     {
         plate = vehicle.GetPlate();
         speed = vehicle.GetSpeed();

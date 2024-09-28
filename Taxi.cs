@@ -1,4 +1,4 @@
-﻿class Taxi : Vehicle
+﻿class Taxi : VehicleWithPlate
 {
     //constant string as TypeOfVehicle wont change allong PoliceCar instances.
     private static string typeOfVehicle = "Taxi";
@@ -38,6 +38,32 @@
         else
         {
             Console.WriteLine(WriteMessage("is not on a ride."));
+        }
+    }
+
+    public void GiveLicense()
+    {
+        if (license)
+        {
+            Console.WriteLine(WriteMessage("already has a license"));
+        }
+        else
+        {
+            license = true;
+            Console.WriteLine(WriteMessage("has been given a license"));
+        }
+    }
+
+    public void TakeLicense()
+    {
+        if (license)
+        {
+            license = false;
+            Console.WriteLine(WriteMessage("has had its license taken away"));
+        }
+        else
+        {
+            Console.WriteLine(WriteMessage("didn't have a license"));
         }
     }
 }
