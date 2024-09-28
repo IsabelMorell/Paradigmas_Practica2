@@ -4,6 +4,7 @@
 
     public PoliceStation()
     {
+        policeCars = new List<PoliceCar>();
     }
 
     public PoliceCar AddPoliceCar(string newPlate)

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2\\Paradigmas_P2.csproj": {}
+    "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2\\Paradigmas_P2.csproj": {
+    "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2\\Paradigmas_P2.csproj",
+        "projectUniqueName": "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2.csproj",
         "projectName": "Paradigmas_P2",
-        "projectPath": "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2\\Paradigmas_P2.csproj",
+        "projectPath": "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2.csproj",
         "packagesPath": "C:\\Users\\Isabel Morell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\Paradigmas_P2\\obj\\",
+        "outputPath": "C:\\Users\\Isabel Morell\\Documents\\GitHub\\03_iMAT\\Paradigmas\\Paradigmas_Practica2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Isabel Morell\\AppData\\Roaming\\NuGet\\NuGet.Config",

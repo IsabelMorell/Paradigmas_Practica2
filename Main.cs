@@ -1,46 +1,41 @@
-﻿public abstract class Vehicle : IMessageWritter
+﻿internal class Program
 {
-    private string typeOfVehicle;
-    private string plate;
-    private float speed;
 
-    public Vehicle(string typeOfVehicle, string plate)
+    static void Main()
     {
-        this.typeOfVehicle = typeOfVehicle;
-        this.plate = plate;
-        speed = 0f;
-    }
+        Taxi taxi1 = new Taxi("0001 AAA", true);
+        Taxi taxi2 = new Taxi("0002 BBB", true);
 
-    //Override ToString() method with class information
-    public override string ToString()
-    {
-        return $"{GetTypeOfVehicle()} with plate {GetPlate()}";
-    }
+        PoliceStation policeStation = new PoliceStation();
 
-    public string GetTypeOfVehicle()
-    {
-        return typeOfVehicle;
-    }
+        PoliceCar policeCar1 = policeStation.AddPoliceCar("0001 CNP");
+        PoliceCar policeCar2 = policeStation.AddPoliceCar("0002 CNP");
 
-    public string GetPlate()
-    {
-        return plate;
-    }
+        Console.WriteLine(taxi1.WriteMessage("Created"));
+        Console.WriteLine(taxi2.WriteMessage("Created"));
+        Console.WriteLine(policeCar1.WriteMessage("Created"));
+        Console.WriteLine(policeCar2.WriteMessage("Created"));
 
+        policeCar1.StartPatrolling();
+        policeCar1.UseRadar(taxi1);
 
-    public float GetSpeed()
-    {
-        return speed;
-    }
+        taxi2.StartRide();
+        policeCar2.UseRadar(taxi2);
+        policeCar2.StartPatrolling();
+        policeCar2.UseRadar(taxi2);
+        taxi2.StopRide();
+        policeCar2.EndPatrolling();
 
-    public void SetSpeed(float speed)
-    {
-        this.speed = speed;
-    }
+        taxi1.StartRide();
+        taxi1.StartRide();
+        policeCar1.StartPatrolling();
+        policeCar1.UseRadar(taxi1);
+        taxi1.StopRide();
+        taxi1.StopRide();
+        policeCar1.EndPatrolling();
 
-    //Implment interface with Vechicle message structure
-    public string WriteMessage(string message)
-    {
-        return $"{this}: {message}";
+        policeCar1.PrintRadarHistory();
+        policeCar2.PrintRadarHistory();
+
     }
 }
