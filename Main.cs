@@ -1,20 +1,31 @@
 ﻿internal class Program
 {
-
     static void Main()
     {
+        City city = new City("Madrid");
+        PoliceStation policeStation = new PoliceStation();
+        Console.WriteLine(city.WriteMessage("Created"));
+        Console.WriteLine(policeStation.WriteMessage("Created"));
+        city.AddPoliceStation(policeStation);
+
         Taxi taxi1 = new Taxi("0001 AAA", true);
         Taxi taxi2 = new Taxi("0002 BBB", true);
-
-        PoliceStation policeStation = new PoliceStation();
+        Taxi taxi3 = new Taxi("0003 CCC", true);
+        Taxi taxi4 = new Taxi("0004 DDD", true);
 
         PoliceCar policeCar1 = policeStation.AddPoliceCar("0001 CNP");
         PoliceCar policeCar2 = policeStation.AddPoliceCar("0002 CNP");
+        PoliceCar policeCar3 = policeStation.AddPoliceCar("0001 CNP");
+        PoliceCar policeCar4 = policeStation.AddPoliceCar("0002 CNP");
 
         Console.WriteLine(taxi1.WriteMessage("Created"));
         Console.WriteLine(taxi2.WriteMessage("Created"));
+        Console.WriteLine(taxi3.WriteMessage("Created"));
+        Console.WriteLine(taxi4.WriteMessage("Created"));
         Console.WriteLine(policeCar1.WriteMessage("Created"));
         Console.WriteLine(policeCar2.WriteMessage("Created"));
+        Console.WriteLine(policeCar3.WriteMessage("Created"));
+        Console.WriteLine(policeCar4.WriteMessage("Created"));
 
         policeCar1.StartPatrolling();
         policeCar1.UseRadar(taxi1);

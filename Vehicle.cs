@@ -9,7 +9,6 @@
         speed = 0f;
     }
 
-
     public string GetTypeOfVehicle()
     {
         return typeOfVehicle;

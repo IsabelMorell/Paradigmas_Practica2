@@ -1,9 +1,28 @@
-﻿public class City
+﻿public class City : IMessageWritter
 {
-    private PoliceStation policeStation;
-    public City(PoliceStation newPoliceStation)
+    private string cityName;
+    private PoliceStation? policeStation = null;
+    public City(string cityName)
     {
-        policeStation = newPoliceStation;
+        this.cityName = cityName;
+    }
+
+    public void AddPoliceStation(PoliceStation policeStation)
+    {
+        this.policeStation = policeStation;
+        Console.WriteLine(WriteMessage("has added a police station"));
+    }
+
+    //Override ToString() method with class information
+    public override string ToString()
+    {
+        return $"{cityName}";
+    }
+
+    //Implment interface with City message structure
+    public string WriteMessage(string message)
+    {
+        return $"{this}: {message}";
     }
 }
 
