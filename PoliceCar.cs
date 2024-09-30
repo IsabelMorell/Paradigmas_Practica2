@@ -34,6 +34,10 @@ public class PoliceCar : VehicleWithPlate
                 Console.WriteLine(WriteMessage($"Triggered radar. Result: Driving legally."));
             }
         }
+        else if (speedRadar == null)
+        {
+            Console.WriteLine(WriteMessage($"has no radar."));
+        }
         else
         {
             Console.WriteLine(WriteMessage($"has no active radar."));
@@ -68,6 +72,7 @@ public class PoliceCar : VehicleWithPlate
         if (isPatrolling)
         {
             isPatrolling = false;
+            isPersecuting = false;
             Console.WriteLine(WriteMessage("stopped patrolling."));
         }
         else
@@ -94,7 +99,14 @@ public class PoliceCar : VehicleWithPlate
 
     public void PersecuteVehicle(string infractorsPlate)
     {
-        SetPersecuting(true);
-        Console.WriteLine(WriteMessage($"is persecuting vehicle with plate {infractorsPlate}"));
+        if (!isPersecuting)
+        {
+            SetPersecuting(true);
+            Console.WriteLine(WriteMessage($"is persecuting vehicle with plate {infractorsPlate}"));
+        }
+        else
+        {
+            Console.WriteLine(WriteMessage($"is already persecuting a vehicle"));
+        }
     }
 }

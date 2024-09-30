@@ -7,9 +7,9 @@
         policeCars = new List<PoliceCar>();
     }
 
-    public PoliceCar AddPoliceCar(string newPlate)
+    public PoliceCar AddPoliceCar(string newPlate, SpeedRadar? speedRadar = null)
     {
-        PoliceCar newPoliceCar = new PoliceCar(newPlate, this);  // relacion de composicion
+        PoliceCar newPoliceCar = new PoliceCar(newPlate, this, speedRadar);
         policeCars.Add(newPoliceCar);
         return newPoliceCar;
     }

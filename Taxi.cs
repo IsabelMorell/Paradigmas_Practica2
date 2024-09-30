@@ -1,7 +1,7 @@
 ﻿class Taxi : VehicleWithPlate
 {
     //constant string as TypeOfVehicle wont change allong PoliceCar instances.
-    private static string typeOfVehicle = "Taxi";
+    private const string typeOfVehicle = "Taxi";
     private bool isCarryingPassengers;
     private bool license;
 
