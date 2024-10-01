@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Paradigmas_P2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fce02a3f90c3f6d972ea4ef86d62f25e03709f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0867db051782c3b4b84fc19e58cd73e79357c624")]
 [assembly: System.Reflection.AssemblyProductAttribute("Paradigmas_P2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Paradigmas_P2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

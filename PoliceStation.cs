@@ -27,6 +27,19 @@
         }
     }
 
+    public void StopPersecution(string infractorsPlate)
+    {
+        Console.WriteLine(WriteMessage("alarm dectivated"));
+        foreach (PoliceCar policeCar in policeCars)
+        {
+            bool currentlyPersecuting = policeCar.IsPersecuting();
+            if (currentlyPersecuting)
+            {
+                policeCar.StopPersecution(infractorsPlate);
+            }
+        }
+    }
+
     //Implment interface with PoliceStation message structure
     public string WriteMessage(string message)
     {

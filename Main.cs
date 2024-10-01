@@ -47,6 +47,7 @@
         taxi2.StopRide();
         taxi2.TakeLicense();
         policeCar2.EndPatrolling();
+        policeStation.StopPersecution(taxi2.GetPlate());
 
         taxi1.StartRide();
         taxi1.StartRide();
@@ -55,6 +56,7 @@
         taxi1.StopRide();
         taxi1.StopRide();
         policeCar1.EndPatrolling();
+        policeStation.StopPersecution(taxi1.GetPlate());
 
         policeCar1.PrintRadarHistory();
         policeCar2.PrintRadarHistory();

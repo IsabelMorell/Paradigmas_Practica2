@@ -49,6 +49,11 @@ public class PoliceCar : VehicleWithPlate
         return isPatrolling;
     }
 
+    public bool IsPersecuting()
+    {
+        return isPersecuting;
+    }
+
     public void SetPersecuting(bool newState)
     {
         isPersecuting = newState;
@@ -107,6 +112,19 @@ public class PoliceCar : VehicleWithPlate
         else
         {
             Console.WriteLine(WriteMessage($"is already persecuting a vehicle"));
+        }
+    }
+
+    public void StopPersecution(string infractorsPlate)
+    {
+        if (isPersecuting)
+        {
+            SetPersecuting(false);
+            Console.WriteLine(WriteMessage($"has stopped persecuting vehicle with plate {infractorsPlate}"));
+        }
+        else
+        {
+            Console.WriteLine(WriteMessage($"wasn't persecuting a vehicle"));
         }
     }
 }
